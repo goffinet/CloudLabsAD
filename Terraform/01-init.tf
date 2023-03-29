@@ -23,13 +23,13 @@ locals {
 # Generate random password for windows local admins
 resource "random_string" "windowspass" {
   length           = 16
-  special          = false
+  special          = true
 }
 
 # Generate random password for windows local admins
 resource "random_string" "linuxpass" {
   length           = 16
-  special          = false
+  special          = true
 }
 
 
