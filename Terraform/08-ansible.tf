@@ -42,7 +42,7 @@ resource "local_file" "ansible-groupvars-elastic-creation" {
     azurerm_network_interface.cloudlabs-vm-elastic-nic
   ]
   
-  content = templatefile("${path.module}/../Ansible/group_vars/linux.tmpl",
+  content = templatefile("${path.module}/../Ansible/group_vars/elastic.tmpl",
            { 
               password = random_string.linuxpass.result
               ip       = azurerm_network_interface.cloudlabs-vm-elastic-nic.private_ip_address
