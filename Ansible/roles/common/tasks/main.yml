@@ -43,9 +43,11 @@
     state: present
     ignore_checksums: true
 
+# Note: to fix later
 - name: Install elastic agent
   include_role:
     name: elastic-agent
+  tags: never
 
 - name: Configure bginfo as autorun
   win_regedit:

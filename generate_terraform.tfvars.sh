@@ -6,7 +6,7 @@ cat << EOF > Terraform/terraform.tfvars
 # See 'variables.tf' for definitions
 
 # Required
-resource-group       = "cloudlab"
+resource-group       = "cloudlabs"
 ip-whitelist         = ["${PUBLIC_IP}/32"]
 
 # Optional (defaults are shown)
@@ -20,11 +20,11 @@ elastic-hostname     = "elastic"
 dc-hostname          = "dc"
 winserv2019-hostname = "winserv2019"
 win10-hostname       = "win10"
-win10-size           = "Standard_B4ms"
-winserv2019-size     = "Standard_B4ms"
-dc-size              = "Standard_B4ms"
-elastic-size         = "Standard_B4ms"
-hackbox-size         = "Standard_B4ms"
+win10-size           = "Standard_D1_v2"
+winserv2019-size     = "Standard_D1_v2"
+dc-size              = "Standard_D1_v2"
+elastic-size         = "Standard_D1_v2"
+hackbox-size         = "Standard_D1_v2"
 EOF
 
 cat Terraform/terraform.tfvars
