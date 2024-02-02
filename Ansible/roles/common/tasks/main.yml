@@ -10,6 +10,30 @@
     src: files/bginfo.bgi
     dest: C:\Users\Public\bginfo.bgi
 
+- name: ensure .NET Framework 4.8 requirement is satisfied for Chocolatey CLI v2.0.0+
+  block:
+  - name: install Chocolatey CLI v1.4.0
+    win_chocolatey:
+      name: 'chocolatey'
+      state: present
+      version: '1.4.0'
+    ignore_errors: true
+
+  - name: install Microsoft .NET Framework 4.8
+    win_chocolatey:
+      name: 'netfx-4.8'
+      state: present
+    register: reboot_for_netfx
+
+  - name: Reboot the host to complete .NET Framework 4.8 install
+    ansible.windows.win_reboot:
+    when: reboot_for_netfx.rc !=0
+
+  - name: install Chocolatey CLI v2.0.0+ when .NET Framework 4.8 dependency is met
+    win_chocolatey:
+      name: 'chocolatey'
+      state: latest
+
 # Note: Chocolatey packages should be minimized to avoid hitting the rate limit (only 1 outbound IP is used)
 - name: Install utilities 
   win_chocolatey:
