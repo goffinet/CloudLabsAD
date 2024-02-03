@@ -23,7 +23,7 @@ locals {
 # Generate random password for windows local admins
 resource "random_string" "windowspass" {
   length           = 16
-  special          = true
+  special          = false
 }
 
 # Generate random password for windows local admins
