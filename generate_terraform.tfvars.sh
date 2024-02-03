@@ -6,13 +6,13 @@ cat << EOF > Terraform/terraform.tfvars
 # See 'variables.tf' for definitions
 
 # Required
-resource-group       = "cloudlabs"
+resource-group       = "testlab"
 ip-whitelist         = ["${PUBLIC_IP}/32"]
 
 # Optional (defaults are shown)
 timezone             = "W. Europe Standard Time"
-domain-name-label    = "cloudlabs"
-domain-dns-name      = "cloud.labs"
+domain-name-label    = "testlab"
+domain-dns-name      = "test.lab"
 windows-user         = "labadmin"
 linux-user           = "labadmin"
 hackbox-hostname     = "hackbox"
