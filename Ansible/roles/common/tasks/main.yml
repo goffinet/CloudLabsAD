@@ -46,7 +46,8 @@
 - name: Install elastic agent
   include_role:
     name: elastic-agent
-  tags: never # manual enrollment
+  tags: never 
+  # manual enrollment
 
 - name: Configure bginfo as autorun
   win_regedit:
